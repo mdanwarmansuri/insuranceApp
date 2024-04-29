@@ -1,0 +1,59 @@
+<div class="header">
+  <h2>Payment Detail Register</h2>
+</div>
+
+<div class="content">
+
+  <form #ngForm="ngForm" (ngSubmit)="saveCard()" action="">
+    <div class="field">
+      <label for="owner">CARD OWNER NAME</label><br>
+      <input type="text" [(ngModel)]="form.cardOwner" id="owner" name="owner" #owner="ngModel" placeholder="Full Name"
+        required>
+      <div class="warning" *ngIf="owner.invalid && (owner.touched || owner.dirty)">
+        <span *ngIf="owner.errors?.['required']">Card Owner Name is required</span>
+      </div>
+    </div>
+  
+    <div class="field">
+      <label for="card-number">CARD NUMBER</label><br>
+      <input type="text" [(ngModel)]="form.cardNumber" #cardNumber="ngModel" name="card-number" id="card-number"
+        placeholder="16 Digit Card Number" required pattern="[0-9]{16}">
+      <div class="warning" *ngIf="cardNumber.invalid && (cardNumber.touched || cardNumber.dirty)">
+        <span *ngIf="cardNumber.errors?.['required']">Card Number is required</span>
+        <span *ngIf="cardNumber.errors?.['pattern']">Card Number must be 16 digits</span>
+      </div>
+    </div>
+  
+    <div class="card-info">
+      <div>
+        <label for="security-code">SECURITY CODE</label><br>
+        <input type="text" [(ngModel)]="form.securityCode" #securityCode="ngModel" name="security-code" id="security-code"
+          placeholder="Security Code" required pattern="[0-9]{3}">
+        <div class="warning" *ngIf="securityCode.invalid && (securityCode.touched || securityCode.dirty)">
+          <span *ngIf="securityCode.errors?.['required']">Security Code is required</span>
+          <span *ngIf="securityCode.errors?.['pattern']">Security Code must be a 3-digit number</span>
+        </div>
+      </div>
+      <div>
+        <label for="validity">VALID THROUGH</label><br>
+        <input type="text" [(ngModel)]="form.expiryDate" #expiryDate="ngModel" name="validity" id="validity" placeholder="MM/YY" required pattern="(0[1-9]|1[0-2])\/[0-9]{2}">
+        <div class="warning" *ngIf="expiryDate.invalid && (expiryDate.touched || expiryDate.dirty)">
+          <span *ngIf="expiryDate.errors?.['required']">Expiry Date is required</span>
+          <span *ngIf="expiryDate.errors?.['pattern']">Expiry Date must be in MM/YY format</span>
+        </div>
+      </div>
+    </div>
+  
+    <div class="btns">
+      <button [disabled]="ngForm.form.invalid" id="save">SUBMIT</button>
+      <button id="clear" (click)="clear()">CLEAR</button>
+    </div>
+  </form>
+  
+  
+
+  <div class="cards">
+    <app-cards [cards]="cards" (editEvent)="edit($event)" (deleteEvent)="delete($event)"></app-cards>
+  </div>
+  <!-- <button (click)="see()">click me</button> -->
+</div>

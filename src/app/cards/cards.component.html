@@ -1,0 +1,20 @@
+<h3 *ngIf="cards.length==0">No card to show</h3>
+<table *ngIf="cards.length>0">
+    <thead>
+        <tr>
+          <th>Card Owner</th>
+          <th>Card Number</th>
+          <th>Expiry Date</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let card of cards">
+          <td (click)="edit(card)">{{ card.cardOwner }}</td>
+          <td (click)="edit(card)">{{ card.cardNumber }}</td>
+          <td (click)="edit(card)">{{ card.expiryDate }}</td>
+          <td class="delete"><button (click)="delete(card)"><img src="assets/delete.png" alt="" height="25" width="25"></button></td>
+        </tr>
+    
+      </tbody>
+    </table>

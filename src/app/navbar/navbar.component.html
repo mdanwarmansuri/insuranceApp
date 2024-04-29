@@ -1,0 +1,11 @@
+<div class="navbar">
+    <div class="left">
+        <div><a href=""><img src="assets/home.png" alt="" height="25" width="25"><br>Home</a></div>
+        <div *ngIf="isLoggedIn()"><a href="dashboard"><img src="assets/dashboard.png" alt="" height="25" width="25"><br>Dashboard</a></div>
+    </div>
+    <div class="right">
+        <div *ngIf="!isLoggedIn()"><a href="login"><img src="assets/user-interface.png" alt="" height="25" width="25"><br>Login</a></div>
+        <div *ngIf="isLoggedIn()"><a href="payment"><img src="assets/credit-card1.png" alt="" height="25" width="25"><br>Payments</a></div>
+        <div id="logOut" *ngIf="isLoggedIn()"><a (click)="logOut()"><img src="assets/exit.png" alt="" height="23" width="25"><br>LogOut</a></div>
+    </div>
+</div>

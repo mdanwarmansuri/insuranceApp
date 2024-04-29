@@ -1,0 +1,95 @@
+<div class="header">
+    <div class="welcome">Welcome to InsuredLife Insurance</div>
+
+    <div class="info">
+        <div class="logo"><img src="assets/logo.png" alt="" height="70" width="200"></div>
+        <div class="emp-info">
+            <table>
+                <thead>
+                <tr>
+                    <th>Employee ID</th>
+                    <th>Employee Name</th>
+                    <th>Company Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{getEmpId()}}</td>
+                    <td>{{getEmpName()}}</td>
+                    <td>{{getCompanyName()}}</td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="content">
+    <div class="policies">
+        <div class="policy" *ngFor="let  policy of getPolicies(); let i = index;">
+            <div class="policy-title">{{policy.policyName}}</div>
+            <div class="policy-detail">
+                <div class="left">
+                    <div><span>Insurer:</span><span>{{policy.insurer}}</span></div>
+                    <div><span>TPA:</span><span>{{policy.tpa}}</span></div>
+                    <div><span>Policy period:</span><span>{{policy.start}} to {{policy.end}}</span></div>
+                </div>
+                <div class="right">
+                    <div class="explanation">
+                        <h3>{{policy.description}}</h3>
+                        <p>Policy Enrollment Details</p>
+                    </div>
+                    <div class="image">
+                        <img src="assets/family.png" alt="" height="50" width="50">
+                    </div>
+                </div>
+            </div>
+            <div class="links">
+                <a href="">Family Details</a>
+                <a href="">Documents</a>
+                <a href="">Claims</a>
+                <a href="">Ecard</a>
+                <a href="">Network Hospital</a>
+            </div>
+        </div>
+
+    </div>
+    <div class="contacts">
+        <div class="help-center">
+            <h3>Help Center</h3>
+            <div class="acc-manager">
+                <h4>Kajapathy-Account Manager</h4>
+
+                <div class="cnts"><img src="assets/contact-book.png" alt="" height="27" width="30">
+                    <span>7397647898</span>
+                </div>
+                <div class="cnts"><img src="assets/email.png" alt="" height="27" width="25">
+                    <span>kajapathyfuturisk.in</span>
+                </div>
+
+            </div>
+            <div class="tolfree">
+                <h4>Toll Free Helpline</h4>
+                <div class="lines"><img src="assets/contact-book.png" alt="" height="27"
+                        width="30"><span>1800-1034-569</span></div>
+                <div class="lines"><img src="assets/email.png" alt="" height="27"
+                        width="25"><span>servicehelpdeskfuturisk.in</span></div>
+            </div>
+        </div>
+        <div class="social-media">
+            <h3>Social Media</h3>
+            <div class="cnts">
+                <div><a href="https://www.linkedin.com/company/ilink-digital-thinkingbeyond/mycompany/"><img
+                            src="assets/linkedin.png" alt="" width="20" height="20"></a></div>
+                <div><a href="https://www.youtube.com/user/ilinkinfo/featured"><img src="assets/yt.png" alt=""
+                            width="20" height="20"></a></div>
+                <div><a href="https://twitter.com/ilink_digital"><img src="assets/twitter.png" alt="" width="20"
+                            height="20"></a></div>
+                <div><a href="https://www.instagram.com/ilinkdigital/"><img src="assets/insta.png" alt="" width="20"
+                            height="20"></a></div>
+                <div><a href="https://www.facebook.com/iLink.digital"><img src="assets/facebook.png" alt="" width="20"
+                            height="20"></a></div>
+            </div>
+        </div>
+    </div>
+</div>

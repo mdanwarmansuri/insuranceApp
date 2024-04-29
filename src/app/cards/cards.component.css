@@ -1,0 +1,29 @@
+table {
+    /* border-collapse: collapse; */
+    border-spacing: 0;
+  }
+
+
+thead tr{
+    background-color: gainsboro;
+}
+
+tbody tr{
+    cursor: pointer;
+}
+tbody tr:hover{
+    background-color:ghostwhite;
+}
+th{
+    padding: 10px;
+}
+td{
+    padding:10px;
+    border-bottom: 1px solid lightgray;
+}
+
+.delete button{
+    background-color: white;
+    cursor: pointer;
+    border: none;
+}

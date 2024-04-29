@@ -1,0 +1,158 @@
+.header{
+    margin-top: 70px;
+    padding:15px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    color:black;
+    background-image: url("https://img.freepik.com/free-vector/abstract-geometric-wireframe-background_52683-59421.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header .welcome{
+    color:black;
+    text-align: center;
+    font-size: large;
+    margin-top:20px;
+}
+
+.header .info{
+    margin: auto;
+    /* background-color: white; */
+    background-image: url("https://img.freepik.com/free-vector/background-realistic-abstract-technology-particle_23-2148431735.jpg?w=900&t=st=1714302945~exp=1714303545~hmac=48cc61f2a51a5ecc3faba7e281b7e89deb9b1fb790e9be0722fca20a41419efa");
+    color:red;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    margin-top:40px;
+    margin-bottom: 20px;
+    padding:10px;
+    width: 60%;
+    border-radius: 7px;
+}
+.header table{
+    margin: auto;
+    text-align: center;
+}
+
+.policy{
+    /* margin:auto; */
+    padding:20px;
+    width:100%;
+    border-radius: 5px;
+    /* margin-top: 10px; */
+    margin-bottom: 30px;
+    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+    background-color: white;
+    /* border: 1px solid gray; */
+    /* background-image: url("https://img.freepik.com/free-vector/white-abstract-background_23-2148810353.jpg"); */
+}
+.policy .policy-detail{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding:15px; */
+}
+
+.policy-detail .right{
+    display: flex;
+    background-color: lightcyan;
+    /* border: 3px solid red; */
+    padding:10px;
+    border-radius: 7px;
+    align-items: center;
+}
+
+.policy-detail .right img{
+    margin-left:10px;
+}
+
+.policy-detail .left div{
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.policy-detail .left div span{
+    margin-right: 15px;
+}
+
+.policy .policy-title{
+    font-size: large;
+    font-weight: bold;
+}
+
+.links{
+    display: flex;
+    justify-content: space-between;
+    margin-top:30px;
+}
+
+.links a{
+    text-decoration: none;
+    font-size: medium;
+    font-weight: bold;
+    color:white;
+    /* border: 2px dotted #6610f2; */
+    padding: 8px;
+    border-radius: 4px;
+    background-color: #0E98BA;
+    min-width: 15%;
+    text-align: center;
+}
+
+.content{
+    /* background-image: url("https://img.freepik.com/free-vector/white-abstract-wallpaper_23-2148830026.jpg"); */
+    /* margin: 0; */
+    background-repeat: no-repeat;
+    background-color: #FFFAFA;
+    background-size: cover;
+    display: flex;
+    justify-content: space-evenly;
+    /* justify-content: initial; */
+    padding:10px;
+}
+.policies{
+    padding: 20px;
+}
+
+.contacts{
+    /* border: 1px solid red; */
+    padding: 12px;
+}
+
+.contacts .acc-manager .cnts{
+    align-items: center;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.contacts .acc-manager .cnts img{
+    margin-right:7px;
+}
+
+.contacts .tolfree .lines{
+    align-items: center;
+    display: flex;
+    margin-bottom: 7px;
+}
+
+.contacts .tolfree .lines img{
+    margin-right: 7px;
+}
+
+.help-center,.social-media{
+    /* border: 2px solid blue; */
+    padding: 15px;
+    border-radius: 7px;
+    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+    background-color: white;
+}
+
+.social-media .cnts{
+    display: flex;
+    justify-content: space-between;
+}
+.social-media{
+    margin-top: 20px;
+    background-color: white;
+}

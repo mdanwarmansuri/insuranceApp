@@ -1,0 +1,25 @@
+<!-- <div class="fullpage"> -->
+<!-- <div class="parent"> -->
+    <form #ngForm="ngForm" (ngSubmit)="login()" action="">
+         <div class="logo"><img src="https://png.pngtree.com/template/20190308/ourmid/pngtree-life-insurance-logo-image_62955.jpg" height="100" width="150"></div>
+         <div>
+            <label for="email">Username</label><br>
+            <input type="email" [(ngModel)]="form.email" id="email" name="email" placeholder="Enter email address" required>
+        </div>
+        <!-- <div class="warning" *ngIf="email.invalid && (email.touched || email.dirty)">Email field must be valid</div> -->
+        <div class="pass">
+            <label for="password">Password</label><br>
+            <input type="password" [(ngModel)]="form.password" name="password" id="password" placeholder="Enter password" required>
+        </div>
+        <!-- <div class="warning" *ngIf="password.invalid && (password.touched || password.dirty)">Password field must be valid</div> -->
+        <div class="btn"><button [disabled]="ngForm.form.invalid"><ng-container >Sign In</ng-container></button></div>
+
+        <div class="signup">
+            <h4>Don't have an account?</h4>
+            <a href="">Sign Up</a>
+        </div>
+    </form>
+<!-- </div> -->
+<!-- </div> -->
+    
+    
