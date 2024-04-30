@@ -20,4 +20,8 @@ export class LoginComponent {
   login(){
     this.authService.login(this.form);
   }
+
+  isLoading():boolean{
+    return this.authService.isLoading;
+  }
 }

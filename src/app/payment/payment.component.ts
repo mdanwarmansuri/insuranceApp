@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Card } from '../types/card';
 import { PaymentService } from '../services/payment.service';
 import { ToastrService } from 'ngx-toastr';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-payment',
@@ -71,7 +72,7 @@ export class PaymentComponent implements OnInit {
     this.editing = true;
   }
 
-  saveCard() {
+  saveCard(ngForm:NgForm) {
     this.form.userId = Number(sessionStorage.getItem('UserId'));
     if (!this.editing) {
       this.paymentService.saveCard(this.form).subscribe(
@@ -80,6 +81,7 @@ export class PaymentComponent implements OnInit {
           console.log('Card saved successfully:', response);
           
           this.loadCards();
+          this.clear(ngForm);
         },
         (error) => {
           console.error('Error saving card:', error);
@@ -97,21 +99,29 @@ export class PaymentComponent implements OnInit {
           console.error('Error saving card:', error);
         }
       );
-      this.clear();
+      this.clear(ngForm);
     }
     
   }
 
-  clear() {
-    this.form = {
-      id: 0,
-      userId: 0,
-      cardOwner: "",
-      cardNumber: "",
-      expiryDate: "",
-      securityCode: ""
-    }
+  clear(ngForm:NgForm) {
+    // this.form = {
+    //   id: 0,
+    //   userId: 0,
+    //   cardOwner: "",
+    //   cardNumber: "",
+    //   expiryDate: "",
+    //   securityCode: ""
+    // }
+    ngForm.resetForm();
+    console.log("hi from clear");
+    
     this.editing = false;
+    Object.keys(ngForm.controls).forEach(controlName => {
+      const control = ngForm.controls[controlName];
+      control.markAsPristine();
+      control.markAsUntouched();
+    });
     this.loadCards();
   }
 

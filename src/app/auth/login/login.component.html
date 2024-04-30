@@ -12,7 +12,7 @@
             <input type="password" [(ngModel)]="form.password" name="password" id="password" placeholder="Enter password" required>
         </div>
         <!-- <div class="warning" *ngIf="password.invalid && (password.touched || password.dirty)">Password field must be valid</div> -->
-        <div class="btn"><button [disabled]="ngForm.form.invalid"><ng-container >Sign In</ng-container></button></div>
+        <div class="btn"><button [disabled]="ngForm.form.invalid"><ng-container *ngIf="!isLoading()">Sign In</ng-container><ng-container *ngIf="isLoading()">Signing In</ng-container></button></div>
 
         <div class="signup">
             <h4>Don't have an account?</h4>

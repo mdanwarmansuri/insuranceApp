@@ -4,7 +4,7 @@
 
 <div class="content">
 
-  <form #ngForm="ngForm" (ngSubmit)="saveCard()" action="">
+  <form #ngForm="ngForm" (ngSubmit)="saveCard(ngForm)" action="">
     <div class="field">
       <label for="owner">CARD OWNER NAME</label><br>
       <input type="text" [(ngModel)]="form.cardOwner" id="owner" name="owner" #owner="ngModel" placeholder="Full Name"
@@ -46,7 +46,7 @@
   
     <div class="btns">
       <button [disabled]="ngForm.form.invalid" id="save">SUBMIT</button>
-      <button id="clear" (click)="clear()">CLEAR</button>
+      <button id="clear" (click)="clear(ngForm)">CLEAR</button>
     </div>
   </form>
   
