@@ -18,6 +18,7 @@ export class DashboardService {
   constructor(private httpClient:HttpClient) { }
 
    setData(){
+    this.policies=[];
     let uid = sessionStorage.getItem("UserId");
     this.UserId=Number(uid)
     this.EmpId=Number(sessionStorage.getItem("EmpId"));
@@ -42,6 +43,7 @@ export class DashboardService {
           // console.log(this.policies);
         })
       }
+      console.log(this.policies);
     })
     // console.log(this.policies);
   }
