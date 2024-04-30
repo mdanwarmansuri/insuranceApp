@@ -75,6 +75,8 @@ export class PaymentComponent implements OnInit {
   saveCard(ngForm:NgForm) {
     this.form.userId = Number(sessionStorage.getItem('UserId'));
     if (!this.editing) {
+      this.form.id=0;
+      console.log('post method',this.form);
       this.paymentService.saveCard(this.form).subscribe(
         (response) => {
           this.toastr.success('Hello, world!', 'Success');
@@ -105,6 +107,7 @@ export class PaymentComponent implements OnInit {
   }
 
   clear(ngForm:NgForm) {
+    console.log("hello from clear");
     // this.form = {
     //   id: 0,
     //   userId: 0,
@@ -113,10 +116,11 @@ export class PaymentComponent implements OnInit {
     //   expiryDate: "",
     //   securityCode: ""
     // }
+    this.editing = false;
     ngForm.resetForm();
     console.log("hi from clear");
     
-    this.editing = false;
+    
     Object.keys(ngForm.controls).forEach(controlName => {
       const control = ngForm.controls[controlName];
       control.markAsPristine();

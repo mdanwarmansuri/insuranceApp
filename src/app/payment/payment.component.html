@@ -45,8 +45,8 @@
     </div>
   
     <div class="btns">
-      <button [disabled]="ngForm.form.invalid" id="save">SUBMIT</button>
-      <button id="clear" (click)="clear(ngForm)">CLEAR</button>
+      <button type="submit" [disabled]="ngForm.form.invalid" id="save">SUBMIT</button>
+      <button id="clear" type="button" (click)="clear(ngForm)">CLEAR</button>
     </div>
   </form>
   
