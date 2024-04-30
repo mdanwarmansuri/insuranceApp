@@ -6,4 +6,5 @@ export interface policy{
     description:string;
     start:string;
     end:string;
+    image:string;
 }

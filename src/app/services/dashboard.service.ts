@@ -30,6 +30,13 @@ export class DashboardService {
       for(let item of data){
         console.log(item);
         this.httpClient.get(`https://localhost:7259/api/Policies/${item.policyId}`).subscribe((p:any)=>{
+          let imageURL='';
+          if(p.policyName=='Individual Mediclaim Policy'){
+            imageURL='assets/single.png';
+          }
+          else{
+            imageURL='assets/family.png';
+          }
           let policy={
             policyId:p.policyId,
             policyName:p.policyName,
@@ -37,7 +44,8 @@ export class DashboardService {
             tpa:p.tpa,
             description:p.description,
             start:item.startDate.substring(0,10),
-            end:item.endDate.substring(0,10)
+            end:item.endDate.substring(0,10),
+            image:imageURL
           }
           this.policies.push(policy)
           // console.log(this.policies);
