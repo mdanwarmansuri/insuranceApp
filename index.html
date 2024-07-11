@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Weather Data Field</title>
+  <style>
+    /* Add your CSS styles here */
+    .weather-data {
+      font-size: 14px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div id="weather-data" class="weather-data"></div>
+
+  <script>
+    // Weather API URL
+    const apiUrl = 'http://api.weatherapi.com/v1/current.json?key=28b89997d0254da38d951131241107&q=Pune';
+
+    // Function to fetch weather data from the API
+    function fetchWeatherData() {
+      fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+          displayWeatherData(data);
+        })
+        .catch(error => console.error('Error fetching weather data:', error));
+    }
+
+    // Function to display weather data
+    function displayWeatherData(data) {
+      const weatherDiv = document.getElementById('weather-data');
+      const weatherInfo = `
+        <p><strong>Location:</strong> ${data.location.name}, ${data.location.region}, ${data.location.country}</p>
+        <p><strong>Temperature:</strong> ${data.current.temp_c}°C</p>
+        <p><strong>Condition:</strong> ${data.current.condition.text}</p>
+      `;
+      weatherDiv.innerHTML = weatherInfo;
+    }
+
+    // Fetch weather data when the extension is loaded
+    document.addEventListener('DOMContentLoaded', fetchWeatherData);
+  </script>
+</body>
+</html>
